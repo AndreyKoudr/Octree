@@ -22,7 +22,7 @@ The conclusions is that there is a class of algorithms which seem programmable b
 This octree contruction
 =======================
 
-No neighbour information in memory at all - all generated on the fly. Cells are fully defined by their integer coordinates of their centres. List of cells is a map of three integer coordinates into cell class. If you wish to refine a cell, you generate integer coordinates of its neighbours and add them to the map. That's all.<br /><br /> 
+No neighbour information in memory at all - all generated on the fly. Cells are fully defined by their integer coordinates of their centres. List of cells is a map of three integer coordinates into an instance of cell class. If you wish to refine a cell, you generate integer coordinates of its neighbours and add them to the map. That's all.<br /><br /> 
 This makes the code very simple, reliable and saves memory. Downside : yes, it must be slower but not very much.
 
 More detail
