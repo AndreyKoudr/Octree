@@ -59,6 +59,10 @@ and one less important with floating point components :
 	/** Octree vector type */
 	#define OVECTOR TVector<OREAL>
 	
+- <B>Strings.h</B>. Basic string operations.
+- 
+- <B>Triangles.h</B>. Auxiliary class (https://github.com/AndreyKoudr/3DTriangles) to convert octree faces into triangles with <I>void cellsToTriangles()</I>, save in an STL file for display. Nothing more.
+
 - <B>ONode.h</B>. ONode class. A node for a finite-element linear conforming approximation within octree. Can also carry data of type T.
 When you add a cell to an octree, 8 new nodes are inserted into the node map, increasing their reference counts.
 When a cell is excluded, its nodal ref counts are decreased and nodes are physically removed from total node map is only ref count reaches zero.
@@ -72,4 +76,6 @@ Background cells are cells of level 0. Every cell of level 0 can be subdivided (
   (1) which background cell?<br />
   (2) starting from this background cell, search within a hierarchy<br />
 Both operations are fast. This is the way an octree provides a kind of indexing for 3D points.
+
+
 
