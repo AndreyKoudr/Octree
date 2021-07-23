@@ -31,5 +31,5 @@ More detail
 ===========
 Actually octree has two maps, one for cells and one for nodes. Nodes are 8 nodes of each cell around its centre.<br /><br />
 Nodes are needed to build a good continuous approximation of a function (e.g. level-set function) which can be done with conforming finite elements (https://github.com/AndreyKoudr/FiniteElements).<br /><br />
-When you add a cell to an octree, 8 new nodes are inserted into the node map, increasing their reference counts. When a cell is excluded, its nodal ref counts are decreased and a node is physically removed from total node map is only its ref count reaches zero.
+When you add a cell to an octree, 8 new nodes are inserted into the node map, increasing their reference counts. When a cell is excluded, its nodal ref count is  decreased and a node is physically removed from total node map if only its ref count reaches zero.
 
