@@ -43,8 +43,8 @@ can be replaced by Google btree::maps (not Google maps) from cpp-btree-1.0.1. It
 Files and classes
 =================
 
-- Types.h. Some useful types and macros
-- Vector.h. These are two basic classes for 3D vectors with operators which make
+- <B>Types.h</B>. Some useful types and macros
+- <B>Vector.h</B>. These are two basic classes for 3D vectors with operators which make
 possible to use simple operations on vectors like v3 = v1 + v2 etc. (https://github.com/AndreyKoudr/3DVector). Only first class without SIMD with three integet components is used here :<br />
 
 		/** Very important class to define integer positions of cells and nodes within octree. */
@@ -58,13 +58,13 @@ and one less important with floating point components :
 	/** Octree vector type */
 	#define OVECTOR TVector<OREAL>
 	
-- ONode.h. ONode class. A node for a finite-element linear conforming approximation within octree. Can also carry data of type T.
+- <B>ONode.h</B>. ONode class. A node for a finite-element linear conforming approximation within octree. Can also carry data of type T.
 When you add a cell to an octree, 8 new nodes are inserted into the node map, increasing their reference counts.
 When a cell is excluded, its nodal ref counts are decreased and nodes are physically removed from total node map is only ref count reaches zero.
 
-- OCell.h. OCell class. Cell (octant) identified by its integer position in a map. It can also carry a data of type T.
+- <B>OCell.h</B>. OCell class. Cell (octant) identified by its integer position in a map. It can also carry a data of type T.
 
-- OBackground.h. Background parameters for a balanced octree. Background is a set of largest cells obtained by uniform division of the whole cuboid region.
+- <B>OBackground.h</B>. Background parameters for a balanced octree. Background is a set of largest cells obtained by uniform division of the whole cuboid region.
 Background cells are cells of level 0. Every cell of level 0 can be subdivided (refined) to make a hierarchy of cells inside a background cell.<br />
 
   A search of every 3D point inside octree is two-step :<br />
