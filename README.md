@@ -60,7 +60,7 @@ and one less important with floating point components :
 	#define OVECTOR TVector<OREAL>
 	
 - <B>Strings.h</B>. Basic string operations.
-- 
+
 - <B>Triangles.h</B>. Auxiliary class (https://github.com/AndreyKoudr/3DTriangles) to convert octree faces into triangles with <I>void cellsToTriangles()</I>, save in an STL file for display. Nothing more.
 
 - <B>ONode.h</B>. ONode class. A node for a finite-element linear conforming approximation within octree. Can also carry data of type T.
