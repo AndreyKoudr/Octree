@@ -1,8 +1,5 @@
 # Octree
 
-Octrees
-=======
-
 https://en.wikipedia.org/wiki/Octree
 
 What is it for?
