@@ -45,7 +45,7 @@ Files and classes
 
 - Types.h. Some useful types and macros
 - Vector.h. These are two basic classes for 3D vectors with operators which make
-possible to use simple operations on vectors like v3 = v1 + v2 etc. (https://github.com/AndreyKoudr/3DVector). Only first class without SIMD with three integet components is used here :
+possible to use simple operations on vectors like v3 = v1 + v2 etc. (https://github.com/AndreyKoudr/3DVector). Only first class without SIMD with three integet components is used here :<br />
 
 	/** Very important class to define integer positions of cells and nodes within octree. */
 	#define IPosition TVector<LINT>
