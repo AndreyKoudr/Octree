@@ -9,6 +9,7 @@ What is it for?
 - (4) geometry morphing by level sets (from this shape to this shape)
 - (5) continuous function approximation on non-conformal mesh (octree is actually a non-conformal mesh) with XFEM
 - (6) 3D mesh generation : create an octree with a body inside, refine octree cells near body surface and you will get non-conformal meshes inside and outside (not body-fitted yet)
+- (7) conversion from a point cloud into parametric geometry
 
 Traditional octree construction
 ===============================
