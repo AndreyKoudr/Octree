@@ -31,6 +31,55 @@ Actually octree has two maps, one for cells and one for nodes. Nodes are 8 nodes
 Nodes are needed to build a good continuous approximation of a function (e.g. level-set function) which can be done with conforming finite elements (https://github.com/AndreyKoudr/FiniteElements).<br /><br />
 When you add a cell to an octree, 8 new nodes are inserted into the node map, increasing their reference counts. When a cell is excluded, its nodal ref count is  decreased and a node is physically removed from total node map if only its ref count reaches zero.
 
+Octree implementation
+=====================
+
+  Background.<br /><br />
+
+  Background is a set of largest cells obtained by uniform division of the whole cuboid region.
+  Background cells are those of level 0. Every cell of level 0 can be subdivided (refined)
+to make a hierarchy of cells inside a background cell. 
+
+  Search.<br /><br />
+
+  A search of every 3D point inside octree is two-step :
+  (1) which background cell? 
+  (2) starting from this background cell, search within a hierarchy
+Both operations are fast. This is the way an octree provides a kind of indexing for 3D points.<br />
+  Use <I>findCellCentreAndCheck()</I> to find a cell for a point position.
+
+  Cells and nodes.<br /><br />
+
+  Octree is a collection of cells (<I>OCELLS cells_;</I>) and nodes (ONODES nodes_;) both wholly 
+defined by their single integer coordinates (cell centre for cells) <I>IPosition</I>. 
+Position of cell also uniquely defines its level (number of cell subdivisions from background 
+cell) (use <I>level()</I> for that) and its size (<I>intCellSize()</I>).<br />
+  
+  Each cell and every node carries data in OCELL_DATA and ONODE_DATA type variables. 
+
+  Cell neighbours.<br /><br />
+
+  No information about neighbours is in memory inside a cell : all info is generated on the 
+fly by search of neighbour cells in <I>OCELLS</I> map. This makes the code very simple, reliable and 
+saves lots of memory.
+
+  Refine/derefine cells.<br /><br />
+
+  Cells can be refined and de-refined. Max refinement level (for the the smallest posiible cell) is 
+defined by <I>maxLevel</I> in the background. If you specify maxLevel as 20, it means that the smallest 
+cell may have size of 
+
+  background_cell_size / 2^20
+
+that is, ~0.001mm for background size 1m.
+
+  Call <I>refineCell()</I> to subidvide a cell into 8 sub-cells; it is not ALWAYS possible because all newly generated
+cells and their neighbours must satisfy the <B>balanced</B> ocree condition : difference in levels of any two 
+neigbour cells must not be higher than 1.<br />
+  Call <I>derefineCell()</I> on a parent cell to delete all its sub-cells. <I>isLeaf()</I> function tells if
+a cell has children or not (is a leaf). DE-refinement may not be successful as well due to a failing 
+balanced condition.
+
 Simple improvements
 ===================
 
@@ -76,6 +125,21 @@ Background cells are cells of level 0. Every cell of level 0 can be subdivided (
   (1) which background cell?<br />
   (2) starting from this background cell, search within a hierarchy<br />
 Both operations are fast. This is the way an octree provides a kind of indexing for 3D points.
+
+- <B>OOctree.h</B>. Octree implementation with abundant comments.
+
+Projects
+========
+- project <I>STLToPointCloud</I> is auxiliary projects to generate sample point clouds from STL files. 
+It has nothing in common with octrees.
+- project <I>PointCloudToSTL</I> is used to demonstrate how octree is working. Its output is not always perfect;
+it would require more time for better results. You must remember that the <B>Octree</B> is the main issue.<br />
+See comments inside the code.
+
+What is good and what is bad
+============================
+<B>OOctree</B> class is reliable and can be used for many different purposes.<br />
+Do not expect perfect watertight output in <I>PointCloudToSTL</I> project.
 
 
 
