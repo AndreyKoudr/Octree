@@ -44,7 +44,7 @@ to make a hierarchy of cells inside a background cell.
 
   A search of every 3D point inside octree is two-step :
   - (1) which background cell? 
-  - (2) starting from this background cell, search within a hierarchy
+  - (2) starting from this background cell, search within a hierarchy.<br />
 Both operations are fast. This is the way an octree provides a kind of indexing for 3D points.<br />
   Use <I>findCellCentreAndCheck()</I> to find a cell for a point position.
 
