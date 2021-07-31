@@ -140,7 +140,7 @@ See comments inside the code.<br />
 What is good and what is bad
 ============================
 <B>OOctree</B> class is reliable and can be used for many different purposes.<br />
-Do not expect perfect watertight output in <I>PointCloudToSTL</I> project. Read explanations in the project code.<br />
+Do not expect perfect watertight output in <I>PointCloudToSTL</I> project. Read explanations in <I>PointCloudToSTL.cpp</I>.
 
 
 
