@@ -140,7 +140,8 @@ See comments inside the code.<br />
 What is good and what is bad
 ============================
 <B>OOctree</B> class is reliable and can be used for many different purposes.<br />
-Do not expect perfect watertight output in <I>PointCloudToSTL</I> project. Read explanations in the project code. This file actually has resolution 0.001, not 0.0005. I had to replace it due to Git file upload limitation.
+Do not expect perfect watertight output in <I>PointCloudToSTL</I> project. Read explanations in the project code.<br />
+<B>Please unzip the file shuttle.0.0005 in PointClouds directory!</B> if you wish to run Debug with command-line parameters in Visual Studio. This file actually has resolution 0.001, not 0.0005. I had to replace it due to Git file upload limitation.
 
 
 
