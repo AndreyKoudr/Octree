@@ -10,6 +10,7 @@ absolute, this is a fraction of the whole model size. Input STL file may be both
 separated by spaces. Change line 188 in CloudPoints.h from
   
       file << v.X << " " << v.Y << " " << v.Z << "\n"; 
+      
 to
 
       file << v.X << "\t" << v.Y << "\t" << v.Z << "\n"; 
