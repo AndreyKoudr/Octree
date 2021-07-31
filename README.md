@@ -17,7 +17,7 @@ Traditional octree construction
 A traditional octree construction. Every cell face (total 6) has pointers to cell neighbours.<br /><br />
 Let's say you want to refine a cell (subdivide into 8 sub-cells). First check if can be refined to keep octree balanced (every two neighbour cells can have 1 level (twice size) difference. Let's say, this check is OK for new cells (after subdivision) and you make cell subdivision into 8 sub-cells.<br /><br />
 The beauty of CAD programming is a false impression that everything can be done easily. You start writing the code. In this case, you need to assign proper pointers to all the old and new cells. After some testing you see that not all variants are covered and the code needs fixing. When the full code starts working as completed, again, a customer reports that in same place something is not right. You see that, again, not all variants are covered etc.<br /><br />
-The conclusions is that there is a class of algorithms which seem programmable but they are actually not. They are very common in 3D.
+The conclusion is that there is a class of algorithms which seem programmable but they are actually not. They are very common in 3D.
 
 This octree construction
 =======================
@@ -131,7 +131,7 @@ Both operations are fast. This is the way an octree provides a kind of indexing 
 Projects
 ========
 - project <I>STLToPointCloud</I> is an auxiliary project to generate sample point clouds from STL files. 
-It has nothing in common with octrees.
+It has nothing in common with octrees. Use it to generate .XYZ files for testing <I>PointCloudToSTL</I>.
 - project <I>PointCloudToSTL</I> is used to demonstrate how octree is working. Its output is not always perfect;
 it would require more time for better results. You must remember that the <B>Octree</B> is the main issue.<br />
 See comments inside the code.<br />
