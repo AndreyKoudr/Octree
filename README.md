@@ -19,7 +19,7 @@ Let's say you want to refine a cell (subdivide into 8 sub-cells). First check if
 The beauty of CAD programming is a false impression that everything can be done easily. You start writing the code. In this case, you need to assign proper pointers to all the old and new cells. After some testing you see that not all variants are covered and the code needs fixing. When the full code starts working as completed, again, a customer reports that in same place something is not right. You see that, again, not all variants are covered etc.<br /><br />
 The conclusions is that there is a class of algorithms which seem programmable but they are actually not. They are very common in 3D.
 
-This octree contruction
+This octree construction
 =======================
 
 No neighbour information in memory at all - all generated on the fly. Cells are fully defined by their integer coordinates of their centres. List of cells is a map of three integer coordinates into an instance of cell class. If you wish to refine a cell, you generate integer coordinates of its neighbours and add them to the map. That's all.<br /><br /> 
