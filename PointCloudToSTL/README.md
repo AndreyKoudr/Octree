@@ -40,8 +40,7 @@ distance for a node among all neighbouring cells is selected as distance filed v
 raster cell nodes. Signed distnace function is the length of distance field vector with a sign 
 taken from the inside/ouside step : values of the function for inside nodes are negative, outside are positive.
   - And the last step : triangulate signed distance function values at raster cell nodes by marching cubes
-  
-<I>polygoniseDistanceFields()</I>. The algorithm is modified from a traditional marching cubes (taken from 
+  <I>polygoniseDistanceFields()</I>. The algorithm is modified from a traditional marching cubes (taken from 
 http://paulbourke.net/geometry/polygonise/). The problem is to provide continuous approximation for
 the signed distance function across cells of different sizes. This is done by using conforming finite
 elements (https://github.com/AndreyKoudr/FiniteElements). 
