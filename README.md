@@ -34,13 +34,13 @@ When you add a cell to an octree, 8 new nodes are inserted into the node map, in
 Octree implementation
 =====================
 
-  Background.<br /><br />
+  Background.<br />
 
   Background is a set of largest cells obtained by uniform division of the whole cuboid region.
   Background cells are those of level 0. Every cell of level 0 can be subdivided (refined)
 to make a hierarchy of cells inside a background cell. 
 
-  Search.<br /><br />
+  Search.<br />
 
   A search of every 3D point inside octree is two-step :
   (1) which background cell? 
@@ -48,7 +48,7 @@ to make a hierarchy of cells inside a background cell.
 Both operations are fast. This is the way an octree provides a kind of indexing for 3D points.<br />
   Use <I>findCellCentreAndCheck()</I> to find a cell for a point position.
 
-  Cells and nodes.<br /><br />
+  Cells and nodes.<br />
 
   Octree is a collection of cells (<I>OCELLS cells_;</I>) and nodes (ONODES nodes_;) both wholly 
 defined by their single integer coordinates (cell centre for cells) <I>IPosition</I>. 
@@ -57,13 +57,13 @@ cell) (use <I>level()</I> for that) and its size (<I>intCellSize()</I>).<br />
   
   Each cell and every node carries data in OCELL_DATA and ONODE_DATA type variables. 
 
-  Cell neighbours.<br /><br />
+  Cell neighbours.<br />
 
   No information about neighbours is in memory inside a cell : all info is generated on the 
 fly by search of neighbour cells in <I>OCELLS</I> map. This makes the code very simple, reliable and 
 saves lots of memory.
 
-  Refine/derefine cells.<br /><br />
+  Refine/derefine cells.<br />
 
   Cells can be refined and de-refined. Max refinement level (for the the smallest posiible cell) is 
 defined by <I>maxLevel</I> in the background. If you specify maxLevel as 20, it means that the smallest 
