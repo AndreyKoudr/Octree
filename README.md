@@ -134,12 +134,13 @@ Projects
 It has nothing in common with octrees.
 - project <I>PointCloudToSTL</I> is used to demonstrate how octree is working. Its output is not always perfect;
 it would require more time for better results. You must remember that the <B>Octree</B> is the main issue.<br />
-See comments inside the code.
+See comments inside the code.<br />
+<B>Unzip a sample XYZ file file in PointClouds directory if you wish to run this project in Debug!.</B>
 
 What is good and what is bad
 ============================
 <B>OOctree</B> class is reliable and can be used for many different purposes.<br />
-Do not expect perfect watertight output in <I>PointCloudToSTL</I> project. Read explanations in the project code.
+Do not expect perfect watertight output in <I>PointCloudToSTL</I> project. Read explanations in the project code. This file actually has resolution 0.001, not 0.0005. I had to replace it due to Git file upload limitation.
 
 
 
