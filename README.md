@@ -130,7 +130,7 @@ Both operations are fast. This is the way an octree provides a kind of indexing 
 
 Projects
 ========
-- project <I>STLToPointCloud</I> is auxiliary projects to generate sample point clouds from STL files. 
+- project <I>STLToPointCloud</I> is an auxiliary project to generate sample point clouds from STL files. 
 It has nothing in common with octrees.
 - project <I>PointCloudToSTL</I> is used to demonstrate how octree is working. Its output is not always perfect;
 it would require more time for better results. You must remember that the <B>Octree</B> is the main issue.<br />
