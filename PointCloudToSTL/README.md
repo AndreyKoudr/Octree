@@ -34,7 +34,7 @@ disappear.
 These are vectors pointing from a node to the closest point on the surface. The code tries to build a LSQ plane over the
 points in a cell and project node positions onto this plane; if this fails, the plane is built over three 
 first points inside the cell; if this fails as well, just a minimum distance to a point is calculated. The minimum 
-distance for a node among all neighbouring cells is selected as distance filed vector.
+distance for a node among all neighbouring cells is selected as distance field vector.
 
   - <I>calcSignedDistance()</I> calculates calculates signed distance function values at 
 raster cell nodes. Signed distnace function is the length of distance field vector with a sign 
