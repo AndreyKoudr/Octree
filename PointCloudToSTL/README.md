@@ -8,7 +8,7 @@
  
   - Input (<I>points.readXYZ()</I>).<br />
 Read simple point cloud in .xyz file (three X,Y,Z coordinates in text, separated by spaces not tabs).
-The point cloud must be dense enough, some 0.5 .. 10 millions of points uniformly distributes over 
+The point cloud must be dense enough, some 0.5 .. 10 millions of points uniformly distributed over 
 the model surface. Any area of missing points may be considered as a hole which may not let the code
 define three groups of octree cells : raster (octree cells which have at least one could point inside),
 inside (cells whole inside the body), and outside (whole cells outside the body).
