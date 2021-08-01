@@ -4,7 +4,7 @@
   
   Reconstruction of parametric surface from point cloud
   
-  - Purpose : reconstruct a parametric surface given unordered point cloud (only X,Y,Z coordinates).
+  - Purpose : reconstruct a parametric surface given unordered unoriented point cloud (only X,Y,Z coordinates).
  
   - Input (<I>points.readXYZ()</I>).<br />
 Read simple point cloud in .xyz file (three X,Y,Z coordinates in text, separated by spaces not tabs).
