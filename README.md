@@ -130,9 +130,9 @@ Both operations are fast. This is the way an octree provides a kind of indexing 
 
 Projects
 ========
-- project <I>STLToPointCloud</I> is an auxiliary project to generate sample point clouds from STL files. 
-It has nothing in common with octrees. Use it to generate .XYZ files for testing <I>PointCloudToSTL</I>.
-- project <I>PointCloudToSTL</I> is used to demonstrate how octree is working. Its output is not always perfect;
+- project <B><I>STLToPointCloud</I></B> is an auxiliary project to generate sample dense point clouds from STL files. 
+It has nothing to do with octrees. Use it to generate .XYZ files for testing <I>PointCloudToSTL</I>.
+- project <B><I>PointCloudToSTL</I></B> is used to demonstrate how octree is working. Its output is not always perfect;
 it would require more time for better results. You must remember that the <B>Octree</B> is the main issue.<br />
 See comments inside the code.<br />
 <B>Please unzip the file shuttle.0.0005 in PointClouds directory!</B> if you wish to run Debug with command-line parameters in Visual Studio. This file actually has resolution 0.001, not 0.0005. I had to replace it due to Git file upload limitation.
