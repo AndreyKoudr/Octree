@@ -511,6 +511,14 @@ template<class T> bool TTriangles<T>::loadSTL(const std::string filename, std::s
       if (!OK) 
       {
         fclose(fp);
+         
+        if (tolerance == 0.0)
+        {
+          std::pair<TVector<T>,TVector<T>> mm = minmax();
+          TVector<T> d = mm.second - mm.first;
+          tolerance = !d * 0.000001;
+        }
+
                             // OK, if some triangles already loaded
         bool ok = buildConnectivityArray(tolerance);
         return ok;
@@ -519,6 +527,13 @@ template<class T> bool TTriangles<T>::loadSTL(const std::string filename, std::s
       if (!OK) 
       {
         fclose(fp);
+         
+        if (tolerance == 0.0)
+        {
+          std::pair<TVector<T>,TVector<T>> mm = minmax();
+          TVector<T> d = mm.second - mm.first;
+          tolerance = !d * 0.000001;
+        }
                             // OK, if some triangles already loaded
         bool ok = buildConnectivityArray(tolerance);
         return ok;
