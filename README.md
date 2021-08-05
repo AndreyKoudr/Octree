@@ -22,7 +22,8 @@ The conclusion is that there is a class of algorithms which seem programmable bu
 This octree construction
 =======================
 
-No neighbour information in memory at all - all generated on the fly. Cells are fully defined by 3 integer coordinates of their centres. These three integer coordinates define the cell centre position, cell's level and its size. You do not need to store any of these except position. List of cells is a map of three integer coordinates into an instance of cell class. If you wish to refine a cell, you generate integer coordinates of its neighbours and add them to the map. That's all.<br /><br /> 
+No neighbour information in memory at all - all generated on the fly. Cells are fully defined by 3 integer coordinates of their centres. These three integer coordinates define the cell centre position, cell's level and its size. You do not need to store any of these except position. List of cells is a map of three integer coordinates into an instance of cell class. If you wish to refine a cell, you generate integer coordinates of its neighbours and add them to the map. That's all.<br />
+If you wish to find any neighbour or any other cell, calculate integer coodinates of its centre and look if it exists in the map.<br />
 This makes the code very simple, reliable and saves memory. Downside : yes, it must be slower but not very much.
 
 More detail
@@ -31,14 +32,14 @@ Actually this octree has two maps, one for cells and one for nodes. Nodes are 8 
 Nodes are needed to build a good continuous approximation of a function (e.g. level-set function) which can be done with conforming finite elements (https://github.com/AndreyKoudr/FiniteElements).<br /><br />
 When you add a cell to an octree, 8 new nodes are inserted into the node map, increasing their reference counts. When a cell is excluded, its nodal ref count is  decreased and a node is physically removed from total node map if only its ref count reaches zero.
 
-Octree implementation
-=====================
+Octree implementation and how to use
+====================================
 
   <B>Background</B><br />
 
   Background is a set of largest cells obtained by uniform division of the whole cuboid region.
   Background cells are those of level 0. Every cell of level 0 can be subdivided (refined)
-to make a hierarchy of cells inside a background cell. 
+to make a hierarchy of cells inside a background cell. Background is initialised at construction.
 
   <B>Search</B><br />
 
