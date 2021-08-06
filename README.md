@@ -153,7 +153,7 @@ I generated (rasterisation + refinement) ~1 mln cells octree with approximately 
 	Classifying cells ...
 	rasterisation, refinement, in/out time spent 6.60028
 
-My laptop is definintely is not "high-end", AMD Ryzen 5 4500U with Radeon Graphics 2.38 GHz.
+My laptop is not "high-end", AMD Ryzen 5 4500U with Radeon Graphics 2.38 GHz.
 
 
 What is good and what is bad
