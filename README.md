@@ -138,11 +138,28 @@ it would require more time for better results. You must remember that the <B>Oct
 See comments inside the code.<br />
 <B>Please unzip the file shuttle.0.0005 in PointClouds directory!</B> if you wish to run Debug with command-line parameters in Visual Studio. This file actually has resolution 0.001, not 0.0005. I had to replace it due to Git file upload limitation.
 
+Speed
+=====
+Considering using this octree for 3D mesh generation, I made some preliminary estimation of mesh refinement speed.<br />
+To compare speed with https://arxiv.org/pdf/1805.08831.pdf (tetrahedra Delaunay) "triangulate a million points in about 6 seconds on one core of a high-end laptop"
+I generated (rasterisation + refinement) ~1 mln cells octree with approximately same speed :
+
+	Original octree : num cells 10368, num nodes 12321
+	Refinement at level 0, num cells 53248, num nodes 54910
+	Refinement at level 1, num cells 246960, num nodes 245403
+	Refinement at level 2, num cells 1055232, num nodes 1038445
+	Final rasterisation ...
+	rasterisation and refinement, time spent 2.6256
+	Classifying cells ...
+	rasterisation, refinement, in/out time spent 6.60028
+
+My laptop is definintely is not "high-end", AMD Ryzen 5 4500U with Radeon Graphics 2.38 GHz.
+
+
 What is good and what is bad
 ============================
 <B>OOctree</B> class is reliable and can be used for many different purposes.<br />
 Do not expect perfect watertight output in <I>PointCloudToSTL</I> project. Read explanations in <I>PointCloudToSTL.cpp</I>.
-
 
 
 
