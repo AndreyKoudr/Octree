@@ -20,9 +20,9 @@ The beauty of CAD programming is a false impression that everything can be done 
 The conclusion is that there is a class of algorithms which seem programmable but they are actually not. They are very common in 3D.
 
 This octree construction
-=======================
+========================
 
-No neighbour information in memory at all - all generated on the fly. Cells are fully defined by 3 integer coordinates of their centres. These three integer coordinates define the cell centre position, cell's level and its size. You do not need to store any of these except position. List of cells is a map of three integer coordinates into an instance of cell class which carries a cell data. If you wish to refine a cell, you generate integer coordinates of its neighbours and add them to the map. That's all.<br />
+No neighbour information in memory at all - all generated on the fly. Cells are fully defined by 3 integer coordinates of their centres. These three integer coordinates define the cell centre position, cell's level and its size. You do not need to store any of these except position. List of cells is a map of three integer coordinates into an instance of cell class which carries a cell data. If you wish to refine a cell, you generate integer coordinates of its 8 sub-cells and add them to the map. That's all.<br />
 If you wish to find any neighbour or any other cell, calculate integer coodinates of its centre and look if it exists in the map.<br />
 This makes the code very simple, reliable and saves memory. Downside : yes, it must be slower but not very much.
 
